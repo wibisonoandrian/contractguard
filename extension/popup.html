@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>ContractGuard AI</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <h1>🛡️ ContractGuard AI</h1>
+    <span class="badge" id="version">v0.1</span>
+  </header>
+
+  <div class="form">
+    <select id="chain">
+      <option value="ethereum">Ethereum</option>
+      <option value="bsc">BNB Smart Chain</option>
+      <option value="base">Base</option>
+      <option value="arbitrum">Arbitrum</option>
+      <option value="polygon">Polygon</option>
+    </select>
+    <input type="text" id="address" placeholder="0x... contract address" />
+    <button id="analyze">Analyze</button>
+  </div>
+
+  <div id="result" class="hidden">
+    <div class="verdict-row">
+      <span class="verdict" id="verdict">—</span>
+      <span class="score" id="score">—</span>
+    </div>
+    <div class="contract-name" id="contract-name"></div>
+    <div class="summary" id="summary"></div>
+    <div class="issues" id="issues"></div>
+    <div class="privileges" id="privileges"></div>
+    <div class="meta" id="meta"></div>
+    <a class="explorer-link" id="explorer-link" target="_blank">View on Explorer →</a>
+  </div>
+
+  <div id="loader" class="hidden">
+    <div class="spinner"></div>
+    <p>Analyzing contract via MiMo...</p>
+  </div>
+
+  <div id="error" class="hidden"></div>
+
+  <footer>
+    <button class="link-btn" id="settings-btn">⚙️ Settings</button>
+    <span>API: <code id="api-endpoint">localhost:8766</code></span>
+  </footer>
+
+  <div id="settings" class="hidden">
+    <h3>Settings</h3>
+    <label>API Endpoint
+      <input type="text" id="api-url" placeholder="http://localhost:8766" />
+    </label>
+    <button id="save-settings">Save</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

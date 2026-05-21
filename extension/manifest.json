@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "ContractGuard AI",
+  "version": "0.1.0",
+  "description": "Smart contract risk analyzer powered by MiMo V2.5 Pro. Detect honeypots, rug pulls, and centralization risks before you sign.",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": [
+    "https://etherscan.io/*",
+    "https://bscscan.com/*",
+    "https://basescan.org/*",
+    "https://arbiscan.io/*",
+    "https://polygonscan.com/*",
+    "http://localhost/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://etherscan.io/address/*",
+        "https://bscscan.com/address/*",
+        "https://basescan.org/address/*",
+        "https://arbiscan.io/address/*",
+        "https://polygonscan.com/address/*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
