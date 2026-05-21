@@ -123,5 +123,3 @@ MIT
 - **GitHub:** [@wibisonoandrian](https://github.com/wibisonoandrian)
 - **Email:** wibisono10969@gmail.com
 - **Issues:** [github.com/wibisonoandrian/contractguard/issues](https://github.com/wibisonoandrian/contractguard/issues)
-
-Maintained by Andri Wibisono. Open to collaboration, security audits, and integration partnerships.
